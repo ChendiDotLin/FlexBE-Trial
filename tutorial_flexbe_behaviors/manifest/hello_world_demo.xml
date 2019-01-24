@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="Hello World Demo">
+
+	<executable package_path="tutorial_flexbe_behaviors.hello_world_demo_sm" class="HelloWorldDemoSM" />
+	<tagstring></tagstring>
+	<author>Chendi Lin</author>
+	<date>Mon Jan 21 2019</date>
+	<description>
+		Behavior created during the FlexBE tutorial
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+	<params>
+
+		<param type="numeric" name="waiting_time" default="1" label="waiting_time" hint="Defines the time to wait at start">
+			<min value="1" />
+			<max value="5" />
+		</param>
+
+		<param type="numeric" name="waypoint" default="3" label="waypoint" hint="Sets the waypoint">
+			<min value="0" />
+			<max value="33" />
+		</param>
+
+	</params>
+
+
+</behavior>
