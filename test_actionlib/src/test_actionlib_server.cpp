@@ -40,8 +40,8 @@ class TestAction
 			ta.publishFeedback(feedback);
 
 			//send out the result of the test actionlib server
-			result.test_result = "test 123";
-			ROS_INFO("%s: Succeded awesome!",action_name.c_str());
+			result.test_result = "test 124";
+			ROS_INFO("%s: Succeeded awesome!",action_name.c_str());
 			ta.setSucceeded(result);
 		}
 };

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="trial1">
+
+	<executable package_path="tutorial_flexbe_behaviors.trial1_sm" class="trial1SM" />
+	<tagstring></tagstring>
+	<author>lualla</author>
+	<date>Thu Jan 31 2019</date>
+	<description>
+		simple trial
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>
