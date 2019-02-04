@@ -14,7 +14,10 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  geometry_msgs
 )
+
+
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -66,7 +69,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate actions in the 'action' folder
 add_action_files(
 	DIRECTORY action
-	FILES test.action
+	FILES test.action rendezvous.action
 )
 
 ## Generate added messages and services with any dependencies listed here
@@ -74,6 +77,7 @@ generate_messages(
   DEPENDENCIES
   actionlib_msgs
   std_msgs
+  geometry_msgs
 )
 
 ################################################
@@ -106,10 +110,9 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-INCLUDE_DIRS 
-#include
+INCLUDE_DIRS #include
 LIBRARIES test_actionlib
-CATKIN_DEPENDS actionlib actionlib_msgs message_generation roscpp rospy std_msg
+CATKIN_DEPENDS actionlib actionlib_msgs message_generation roscpp rospy std_msgs geometry_msgs
 #DEPENDS system_lib
 )
 
@@ -120,8 +123,10 @@ CATKIN_DEPENDS actionlib actionlib_msgs message_generation roscpp rospy std_msg
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
+  curlpp/include
+  jsoncpp/include
 )
 
 ## Declare a C++ library
@@ -138,7 +143,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(test_actionlib_server src/test_actionlib_server.cpp)
-
+add_executable(test_http src/test_http.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -152,13 +157,24 @@ add_dependencies(
 	test_actionlib_server
 	${test_actionlib_EXPORTED_TARGETS}
 )
+add_dependencies(
+	test_http
+	${test_http_EXPORTED_TARGETS}
+	${catkin_EXPORTED_TARGETS}
+)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(
 	test_actionlib_server
  	${catkin_LIBRARIES}
 )
-
+target_link_libraries(
+	test_http
+	${catkin_LIBRARIES}
+	curl
+	${CMAKE_CURRENT_SOURCE_DIR}/curlpp/build/libcurlpp.a
+	${CMAKE_CURRENT_SOURCE_DIR}/jsoncpp/build/debug/src/lib_json/libjsoncpp.a
+)
 
 #############
 ## Install ##
