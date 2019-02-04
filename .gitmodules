@@ -1,0 +1,6 @@
+[submodule "test_actionlib/curlpp"]
+	path = test_actionlib/curlpp
+	url = https://github.com/jpbarrette/curlpp.git
+[submodule "test_actionlib/jsoncpp"]
+	path = test_actionlib/jsoncpp
+	url = https://github.com/open-source-parsers/jsoncpp.git
