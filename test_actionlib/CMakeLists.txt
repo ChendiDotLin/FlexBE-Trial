@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(test_actionlib)
-
+set (CMAKE_CXX_STANDARD 11)
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 
@@ -112,7 +112,7 @@ generate_messages(
 catkin_package(
 INCLUDE_DIRS #include
 LIBRARIES test_actionlib
-CATKIN_DEPENDS actionlib actionlib_msgs message_generation roscpp rospy std_msgs geometry_msgs
+CATKIN_DEPENDS actionlib actionlib_msgs message_generation roscpp rospy #std_msgs geometry_msgs
 #DEPENDS system_lib
 )
 

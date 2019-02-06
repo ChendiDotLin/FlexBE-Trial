@@ -1,0 +1,8 @@
+#goal 
+string test_goal
+---
+#result
+string test_result
+---
+#feedback
+int32 test_feedback
