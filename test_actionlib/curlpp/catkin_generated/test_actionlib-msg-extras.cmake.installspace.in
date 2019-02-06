@@ -1,0 +1,2 @@
+set(test_actionlib_MESSAGE_FILES "msg/testAction.msg;msg/testActionGoal.msg;msg/testActionResult.msg;msg/testActionFeedback.msg;msg/testGoal.msg;msg/testResult.msg;msg/testFeedback.msg;msg/rendezvousAction.msg;msg/rendezvousActionGoal.msg;msg/rendezvousActionResult.msg;msg/rendezvousActionFeedback.msg;msg/rendezvousGoal.msg;msg/rendezvousResult.msg;msg/rendezvousFeedback.msg")
+set(test_actionlib_SERVICE_FILES "")

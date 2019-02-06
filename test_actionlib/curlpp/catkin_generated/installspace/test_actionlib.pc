@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: test_actionlib
+Description: Description of test_actionlib
+Version: 0.0.0
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib -ltest_actionlib
+Requires: actionlib actionlib_msgs message_generation roscpp rospy

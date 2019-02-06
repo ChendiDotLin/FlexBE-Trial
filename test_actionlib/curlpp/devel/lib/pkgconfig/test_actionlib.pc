@@ -1,0 +1,8 @@
+prefix=/home/turtle/catkin_ws/src/tutorial_behaviors/test_actionlib/curlpp/devel
+
+Name: test_actionlib
+Description: Description of test_actionlib
+Version: 0.0.0
+Cflags: -I/home/turtle/catkin_ws/src/tutorial_behaviors/test_actionlib/curlpp/devel/include
+Libs: -L/home/turtle/catkin_ws/src/tutorial_behaviors/test_actionlib/curlpp/devel/lib -ltest_actionlib
+Requires: actionlib actionlib_msgs message_generation roscpp rospy
