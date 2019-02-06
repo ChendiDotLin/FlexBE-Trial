@@ -1,5 +1,6 @@
 #include <sstream>
 #include <iostream>
+#include <stdlib.h>
 
 #include <ros/ros.h>
 #include <curlpp/cURLpp.hpp>
@@ -110,13 +111,18 @@ int main(int argc, char** argv)
 	//std::cout << num_rb << std::endl;
 
 	// Now try to sorta not really randomly set each new position based on their current and what their index is
+	srand (time(NULL));
 	Json::Value positions;
 	for(int n = 0; n < num_rb; n++)
 	{
+
 		positions[n]["id"] = n;
-		positions[n]["x"] = testVal[n]["x"].asInt()+n*3;
-		positions[n]["y"] = testVal[n]["y"].asInt()+n*3;
-		positions[n]["z"] = testVal[n]["z"].asInt()+n*3;
+		int randx = rand() % 11 + (-10);
+		positions[n]["x"] = testVal[n]["x"].asInt()+randx;
+		int randy = rand() % 11 + (-10);
+		positions[n]["y"] = testVal[n]["y"].asInt()+randy;
+		int randz = rand() % 11 + (-10);
+		positions[n]["z"] = testVal[n]["z"].asInt()+randz;
 	}
 	Json::Value margs;
 	margs["speed"] = 1;

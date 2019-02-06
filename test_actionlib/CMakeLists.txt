@@ -144,7 +144,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(test_actionlib_server src/test_actionlib_server.cpp)
 add_executable(test_http src/test_http.cpp)
-#add_executable(test_rendezvous src/test_rendezvous.cpp)
+add_executable(test_rendezvous src/test_rendezvous.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -163,12 +163,12 @@ add_dependencies(
 	${test_http_EXPORTED_TARGETS}
 	${catkin_EXPORTED_TARGETS}
 )
-#add_dependencies(
-#	test_rendezvous
-#	${test_actionlib_EXPORTED_TARGETS}
-#	${test_rendezvous_EXPORTED_TARGETS}
-#	${catkin_EXPORTED_TARGETS}
-#)
+add_dependencies(
+	test_rendezvous
+	${test_actionlib_EXPORTED_TARGETS}
+	${test_rendezvous_EXPORTED_TARGETS}
+	${catkin_EXPORTED_TARGETS}
+)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(
@@ -182,13 +182,13 @@ target_link_libraries(
 	${CMAKE_CURRENT_SOURCE_DIR}/curlpp/build/libcurlpp.a
 	${CMAKE_CURRENT_SOURCE_DIR}/jsoncpp/build/debug/src/lib_json/libjsoncpp.a
 )
-#target_link_libraries(
-#	test_rendezvous
-#	${catkin_LIBRARIES}
-#	curl
-#	${CMAKE_CURRENT_SOURCE_DIR}/curlpp/build/libcurlpp.a
-#	${CMAKE_CURRENT_SOURCE_DIR}/jsoncpp/build/debug/src/lib_json/libjsoncpp.a
-#)
+target_link_libraries(
+	test_rendezvous
+	${catkin_LIBRARIES}
+	curl
+	${CMAKE_CURRENT_SOURCE_DIR}/curlpp/build/libcurlpp.a
+	${CMAKE_CURRENT_SOURCE_DIR}/jsoncpp/build/debug/src/lib_json/libjsoncpp.a
+)
 
 #############
 ## Install ##
