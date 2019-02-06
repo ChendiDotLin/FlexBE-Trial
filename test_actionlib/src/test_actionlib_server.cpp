@@ -27,7 +27,8 @@ class TestAction
 		void test_cb(const test_actionlib::testGoalConstPtr &goal)
 		{
 			//show that the goal was recieved
-			ROS_INFO("%s: Recieved a goal msg will do something for a while now...", action_name.c_str());
+
+			ROS_INFO("%s: Recieved a goal msg will do something for a while now...help", action_name.c_str());
 
 			//start the action
 			//blah blah blah
@@ -40,8 +41,8 @@ class TestAction
 			ta.publishFeedback(feedback);
 
 			//send out the result of the test actionlib server
-			result.test_result = "test 124";
-			ROS_INFO("%s: Succeeded awesome!",action_name.c_str());
+			result.test_result = "test 123";
+			ROS_INFO("%s: Succeded awesome!",action_name.c_str());
 			ta.setSucceeded(result);
 		}
 };

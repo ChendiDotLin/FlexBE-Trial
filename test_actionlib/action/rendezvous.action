@@ -1,19 +1,17 @@
 # Goal
-int32 goal_dist
+float64 goal_dist
 # This is the resulting distance between each robot after this action is completed
 ---
 # Result
 bool completed
 int32 num_rb
-int32 avg_real_dist
 time stamp
-geometry_msgs/Point centroid
+geometry_msgs/Point point
 # The bool will tell the client whether the behavior was completed or not while the avg real dist will give the user a metric to see how well the behavior was executed. 
 #Also how many robots are in the swarm as this server will try to be independent of the number of robots spawned. 
 ---
 # Feedback
-int32 avg_real_dist
 int32 num_rb
 time stamp
-geometry_msgs/Point centroid
+geometry_msgs/Point point
 # This will show the user how well the behavior is working in real time
